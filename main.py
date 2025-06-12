@@ -6,9 +6,14 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-@app.get("")
+@app.get("/")
 def read_root():
     return {"Hello": "World"}
+
+@app.get("/student/")
+def read_sagar():
+    return {"name": "sagar",
+            "class":"learning fastapi"}
 
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: Union[str, None] = None):
