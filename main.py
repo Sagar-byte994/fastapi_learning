@@ -15,14 +15,13 @@ def read_sagar():
     return {"name": "sagar",
             "class":"learning fastapi"}
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+@app.get("/numbers/{number}")
+def read_item(number: int):
+
+    sum_of_n_numbers = 0
+
+    for el in range(1, number+1):
+        sum_of_n_numbers = sum_of_n_numbers + el
 
 
-
-# def main():
-#     pass
-#
-# if __name__=="__main__":
-#     main()
+    return {"sum": sum_of_n_numbers}
